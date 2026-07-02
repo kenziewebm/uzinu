@@ -13,10 +13,11 @@ commands:
   disasm <script_name> - disassemble script into vmasm
   find   <string>      - find references to string in decomp
 
-  dump   <block> <meta> [asset] [output] - dump asset from block.
+  dump   <block> <meta/data> [asset] [output] - dump asset from block.
     note: omitting asset name dumps entire block into folder.
     note: trying to dump code will decomp by default.
     note: when dumping animated sprites, [output] becomes the folder name.
+    note: dumping to console will pretty print!
 
 block list:
   Gen8 - game metadata

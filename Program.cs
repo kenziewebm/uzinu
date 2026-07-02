@@ -42,10 +42,11 @@ class Program {
 				"  decomp <script_name> - decompile script into gml\n" +
 				"  disasm <script_name> - disassemble script into vmasm\n" +
 				"  find   <string>      - find references to string in decomp\n\n" +
-				"  dump   <block> <meta> [asset] [output] - dump asset from block.\n" +
+				"  dump   <block> <meta/data> [asset] [output] - dump asset from block.\n" +
 				"    note: omitting asset name dumps entire block into folder.\n" +
 				"    note: trying to dump code will decomp by default.\n" +
-				"    note: when dumping animated sprites, [output] becomes the folder name.\n\n" +
+				"    note: when dumping animated sprites, [output] becomes the folder name.\n" +
+				"    note: dumping to console will pretty print!\n\n" +
 				"block list:\n"+ 
 				"  Gen8 - game metadata\n  Optn - constant map\n  Sond - maps song names to EmbeddedAudio ids\n  Agrp - audio groups\n  Sprt - sprites\n  Bgnd - backgrounds\n" +
 				"  Path - paths\n  Scpt - maps script names to code ids\n  Shdr - shaders\n  Font - fonts\n  Tmln - timelines\n  Objt - game object definitions\n  Room - rooms\n" +
