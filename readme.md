@@ -27,7 +27,6 @@ block list:
   Sprt - sprites
   Bgnd - backgrounds
   Path - paths
-  Scpt - maps script names to code ids
   Shdr - shaders
   Font - fonts
   Tmln - timelines
@@ -45,13 +44,12 @@ block list:
 ## roadmap
 
 - [ ] listing
-  - [ ] list Sond
-  - [ ] list Agrp
-  - [ ] list Sprt
-  - [ ] list Bgnd
-  - [ ] list Path
-  - [ ] list Scpt
-  - [ ] list Shdr
+  - [x] list Sond
+  - [x] list Agrp
+  - [x] list Sprt
+  - [x] list Bgnd
+  - [x] list Path
+  - [x] list Shdr
   - [ ] list Font
   - [ ] list Tmln
   - [ ] list Objt
@@ -66,7 +64,6 @@ block list:
   - [ ] dump Sond
   - [ ] dump Sprt
   - [ ] dump Path
-  - [ ] dump Scpt
   - [ ] dump Shdr
   - [ ] dump Font
   - [ ] dump Tmln
