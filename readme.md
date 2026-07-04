@@ -29,7 +29,6 @@ block list:
   Path - paths
   Shdr - shaders
   Font - fonts
-  Tmln - timelines
   Objt - game object definitions
   Room - rooms
   Tpag - texture pages
@@ -37,27 +36,30 @@ block list:
   Vari - variable definitions
   Func - functions
   Strg - string list
-  Txtr - spritesheet pointers?
+  Txtr - embedded textures
   Audo - embedded audio
+  Tgin - texture group information
+  Embi - embedded images
 ```
 
 ## roadmap
 
-- [ ] listing
+- [x] listing
   - [x] list Sond
   - [x] list Agrp
   - [x] list Sprt
   - [x] list Bgnd
   - [x] list Path
   - [x] list Shdr
-  - [ ] list Font
-  - [ ] list Tmln
-  - [ ] list Objt
-  - [ ] list Room
-  - [ ] list Tpag
+  - [x] list Font
+  - [x] list Objt
+  - [x] list Room
+  - [x] list Tpag
   - [x] list Code
-  - [ ] list Txtr
-  - [ ] list Audo
+  - [x] list Txtr
+  - [x] list Audo
+  - [x] list Tgin
+  - [x] list Embi
 - [ ] dumping
   - [ ] dump Gen8
   - [ ] dump Optn
@@ -66,13 +68,14 @@ block list:
   - [ ] dump Path
   - [ ] dump Shdr
   - [ ] dump Font
-  - [ ] dump Tmln
   - [ ] dump Objt
   - [ ] dump Room
   - [ ] dump Tpag
   - [ ] dump Code
   - [ ] dump Strg
   - [ ] dump Audo
+  - [ ] dump Tgin
+  - [ ] dump Embi
 - [ ] underanalyzer
   - [x] decomp
   - [ ] disasm

@@ -51,7 +51,8 @@ class Program {
 				"block list:\n"+ 
 				"  Gen8 - game metadata\n  Optn - constant map\n  Sond - maps song names to EmbeddedAudio ids\n  Agrp - audio groups\n  Sprt - sprites\n  Bgnd - backgrounds\n" +
 				"  Path - paths\n  Scpt - maps script names to code ids\n  Shdr - shaders\n  Font - fonts\n  Tmln - timelines\n  Objt - game object definitions\n  Room - rooms\n" +
-				"  Tpag - texture pages\n  Code - actual game code\n  Vari - variable definitions\n  Func - functions\n  Strg - string list\n  Txtr - spritesheet pointers?\n  Audo - embedded audio\n");
+				"  Tpag - texture pages\n  Code - actual game code\n  Vari - variable definitions\n  Func - functions\n  Strg - string list\n  Txtr - embedded textures\n  Audo - embedded audio\n" + 
+				"  Tgin - texture group information\n  Embi - embedded images");
 	}
 
 	static int Unknown(string verb) {
