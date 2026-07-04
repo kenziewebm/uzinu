@@ -1,12 +1,8 @@
-﻿using System.IO;
-
-using Underanalyzer.Decompiler;
+﻿using Underanalyzer.Decompiler;
 
 using UndertaleModLib;
-using UndertaleModLib.Util;
 using UndertaleModLib.Models;
 using UndertaleModLib.Decompiler;
-using static UndertaleModLib.UndertaleReader;
 
 using uzinu.Utils;
 
@@ -25,7 +21,7 @@ namespace uzinu.Commands {
 				return 0;
 			} else try {
 				GlobalDecompileContext context = new(gmData);
-				String decompiled = new Underanalyzer.Decompiler.DecompileContext(context, code, gmData.ToolInfo.DecompilerSettings).DecompileToString();
+				string decompiled = new DecompileContext(context, code, gmData.ToolInfo.DecompilerSettings).DecompileToString();
 				Console.WriteLine(decompiled);
 				return 0;
 			} catch (Exception e) {

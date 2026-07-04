@@ -13,7 +13,7 @@ namespace uzinu;
 class Program {
 	static int Main(string[] args) {
 
-		if (args.Length == 0) { PrintUsage(); return 1; }
+		if (args.Length < 3) { PrintUsage(); return 1; }
 
 		string dataFilePath = args[0];
 		string verb = args[1];
@@ -30,6 +30,7 @@ class Program {
 
 		return verb switch {
 			"decomp" or "dec" => DecompileCommand.Run(gmData, rest),
+			"list" => ListCommand.Run(gmData, rest),
 			_ => Unknown(verb)
 		};
 	}

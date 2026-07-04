@@ -57,7 +57,7 @@ block list:
   - [ ] list Objt
   - [ ] list Room
   - [ ] list Tpag
-  - [ ] list Code
+  - [x] list Code
   - [ ] list Txtr
   - [ ] list Audo
 - [ ] dumping
