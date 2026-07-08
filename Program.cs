@@ -1,13 +1,7 @@
-﻿using System.IO;
-
-using uzinu.Commands;
+﻿using uzinu.Commands;
 using uzinu.Utils;
 
 using UndertaleModLib;
-using UndertaleModLib.Util;
-using UndertaleModLib.Models;
-using static UndertaleModLib.UndertaleReader;
-
 namespace uzinu;
 
 class Program {
@@ -20,16 +14,16 @@ class Program {
 		string[] rest = args[2..];
 
 		UndertaleData gmData;
-		try {
-		using FileStream fs = File.OpenRead(dataFilePath);
+		try	{
+			using FileStream fs = File.OpenRead(dataFilePath);
 			gmData = UndertaleIO.Read(fs, Log.Warn, Log.Debug);
 		} catch (Exception e) {
 			Log.Error($"Failed to load data.win: {e}");
 			return 2;
 		}
-
 		return verb switch {
 			"decomp" or "dec" => DecompileCommand.Run(gmData, rest),
+			"dump" => DumpCommand.Run(gmData, rest),
 			"list" => ListCommand.Run(gmData, rest),
 			_ => Unknown(verb)
 		};
@@ -43,15 +37,16 @@ class Program {
 				"  decomp <script_name> - decompile script into gml\n" +
 				"  disasm <script_name> - disassemble script into vmasm\n" +
 				"  find   <string>      - find references to string in decomp\n\n" +
-				"  dump   <block> <meta/data> [asset] [output] - dump asset from block.\n" +
-				"    note: omitting asset name dumps entire block into folder.\n" +
-				"    note: trying to dump code will decomp by default.\n" +
-				"    note: when dumping animated sprites, [output] becomes the folder name.\n" +
+				"  dump   <block> [meta/data] [asset] [output] - dump asset from block.\n" +
+				"    note: omitting asset name dumps entire block into folder\n" +
+				"    note: trying to dump code will decomp by default\n" +
+				"    note: when dumping animated sprites, [output] becomes the folder name\n" +
 				"    note: dumping to console will pretty print!\n\n" +
-				"block list:\n"+ 
+				"    note: dumping some special blocks like gen8 takes just output name" +
+				"block list:\n" +
 				"  Gen8 - game metadata\n  Optn - constant map\n  Sond - maps song names to EmbeddedAudio ids\n  Agrp - audio groups\n  Sprt - sprites\n  Bgnd - backgrounds\n" +
 				"  Path - paths\n  Scpt - maps script names to code ids\n  Shdr - shaders\n  Font - fonts\n  Tmln - timelines\n  Objt - game object definitions\n  Room - rooms\n" +
-				"  Tpag - texture pages\n  Code - actual game code\n  Vari - variable definitions\n  Func - functions\n  Strg - string list\n  Txtr - embedded textures\n  Audo - embedded audio\n" + 
+				"  Tpag - texture pages\n  Code - actual game code\n  Vari - variable definitions\n  Func - functions\n  Strg - string list\n  Txtr - embedded textures\n  Audo - embedded audio\n" +
 				"  Tgin - texture group information\n  Embi - embedded images");
 	}
 
