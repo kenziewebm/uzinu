@@ -23,6 +23,7 @@ class Program {
 		}
 		return verb switch {
 			"decomp" or "dec" => DecompileCommand.Run(gmData, rest),
+			"disasm" or "dis" => DisassembleCommand.Run(gmData, rest),
 			"dump" => DumpCommand.Run(gmData, rest),
 			"list" => ListCommand.Run(gmData, rest),
 			_ => Unknown(verb)

@@ -62,7 +62,7 @@ block list:
   - [x] list Tgin
   - [x] list Embi
 - [ ] dumping
-  - [ ] dump Gen8
+  - [x] dump Gen8
   - [ ] dump Optn
   - [ ] dump Sond
   - [ ] dump Sprt
@@ -77,9 +77,9 @@ block list:
   - [ ] dump Audo
   - [ ] dump Tgin
   - [ ] dump Embi
-- [ ] underanalyzer
+- [x] underanalyzer
   - [x] decomp
-  - [ ] disasm
+  - [x] disasm
 - [ ] find string in decomp
 
 - [ ] syntax highlighting
