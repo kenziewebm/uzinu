@@ -15,7 +15,7 @@ namespace uzinu.Commands {
                 return 4;
             };
 
-			return blockName switch {
+            return blockName switch {
                 "gen8" or "generalinfo" => DumpGen8(gmData, args),
                 _ => Unknown(blockName)
             };
