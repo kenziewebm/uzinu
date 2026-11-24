@@ -1,5 +1,6 @@
 using UndertaleModLib;
 using uzinu.Utils;
+using uzinu.Blocks;
 
 namespace uzinu.Commands {
     static class DumpCommand {
@@ -17,6 +18,7 @@ namespace uzinu.Commands {
 
             return blockName switch {
                 "gen8" or "generalinfo" => DumpGen8(gmData, args),
+                "sond" or "sound" => DumpSond(gmData, args),
                 _ => Unknown(blockName)
             };
         }
@@ -24,6 +26,28 @@ namespace uzinu.Commands {
             Log.Error($"Unkown block name: {blockName}");
             return 1;
         }
+    
+        public static int DumpSond(UndertaleData gmData, string[] args) {
+            (byte[] Data, string Name)? Sound = Blocks.Sond.dumpData(gmData, args[1]);
+            string? output = null;
+            try {
+                output = args[2];
+            } catch (IndexOutOfRangeException) {};
+            try {
+                if (Sound is not null) {
+                    if (output is not null) {
+                        File.WriteAllBytes(output, Sound.Value.Data);
+                    } else {
+                        File.WriteAllBytes(Sound.Value.Name, Sound.Value.Data);
+                    }
+                } 
+                } catch (Exception e) {
+                    Log.Error($"Failed to write file: {e.Message}");
+                    return 1;
+                }
+            return 0;
+        }
+
         public static int DumpGen8(UndertaleData gmData, string[] args) {
             string Gen8 = Blocks.Gen8.DumpData(gmData);
             string? output = null;
